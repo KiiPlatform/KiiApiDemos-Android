@@ -82,10 +82,14 @@ public class UserAttributesFragment extends Fragment {
 
     void updateInfo() {
         KiiUser mUser = KiiUser.getCurrentUser();
-        int gender = mUser.getInt(KEY_GENDER, 0);
-        genderSpinner.setSelection(gender);
-        int age = mUser.getInt(KEY_AGE, 0);
-        ageView.setText(Integer.toString(age));
+        if (mUser != null) {
+            int gender = mUser.getInt(KEY_GENDER, 0);
+            genderSpinner.setSelection(gender);
+            int age = mUser.getInt(KEY_AGE, 0);
+            ageView.setText(Integer.toString(age));
+        } else {
+            Toast.makeText(getActivity(), "Failed to refresh the current user", Toast.LENGTH_LONG).show();
+        }
     }
 
     private final View.OnClickListener mClickListener = new View.OnClickListener() {

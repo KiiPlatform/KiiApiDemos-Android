@@ -83,6 +83,7 @@
     <string name="current_path">Current path:</string>
     <string name="back">Back</string>
     <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <string name="select_folder">Select folder</string>
     <string name="sync_folder">Sync folder:</string>
     <string name="current_folder">Current folder</string>

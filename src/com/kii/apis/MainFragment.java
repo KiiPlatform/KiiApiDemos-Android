@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.view.ViewParentCompatICS;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,6 +16,7 @@ import com.kii.apis.file.FileStorageFragment;
 import com.kii.apis.geolocation.GeoLocationFragment;
 import com.kii.apis.group.GroupManagementActivity;
 import com.kii.apis.object.NotesList;
+import com.kii.apis.preferences.PreferencesFragment;
 import com.kii.apis.push.PushActivity;
 import com.kii.apis.extension.ServerExtensionActivity;
 import com.kii.apis.user.UserManagementFragment;
@@ -65,9 +67,14 @@ public class MainFragment extends ListFragment {
 
         int itemId = itemIds[position];
         switch (itemId) {
-        case R.id.cate_user_management:
+        case R.id.cate_preferences: {
+            ViewUtils.toNextFragment(getFragmentManager(), PreferencesFragment.newInstance(), true);
+            break;
+        }
+        case R.id.cate_user_management: {
             ViewUtils.toNextFragment(getFragmentManager(), UserManagementFragment.newInstance(), true);
             break;
+        }
         case R.id.cate_group_management: {
             Intent intent = new Intent(activity, GroupManagementActivity.class);
             startActivity(intent);
@@ -83,15 +90,18 @@ public class MainFragment extends ListFragment {
             startActivity(intent);
             break;
         }
-        case R.id.cate_file_storage:
+        case R.id.cate_file_storage: {
             ViewUtils.toNextFragment(getFragmentManager(), FileStorageFragment.newInstance(), true);
             break;
-        case R.id.cate_geolocation:
+        }
+        case R.id.cate_geolocation: {
             ViewUtils.toNextFragment(getFragmentManager(), GeoLocationFragment.newInstance(), true);
             break;
-        case R.id.cate_analytics:
+        }
+        case R.id.cate_analytics: {
             ViewUtils.toNextFragment(getFragmentManager(), AnalyticsFragment.newInstance(), true);
             break;
+        }
         case R.id.cate_abtests: {
             KiiEvent event = KiiAnalytics.event("ClickOnABTest");
             try {
