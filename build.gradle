@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:1.0.0'
     }
 }
 
@@ -31,7 +31,7 @@ android {
     buildTypes {
         release {
             debuggable false
-            runProguard false
+            minifyEnabled false
             proguardFile getDefaultProguardFile('proguard-android.txt')
         }
     }
@@ -57,6 +57,6 @@ dependencies {
     compile 'com.google.android.gms:play-services:4.3.+'
     compile 'com.android.support:support-v4:19.+'
     compile files('libs/KiiAnalyticsSDK_2.1.5.jar',
-                  'libs/KiiSDK_2.1.21.jar')
+                  'libs/KiiCloudStorageSDK_2.1.33.jar')
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
 }

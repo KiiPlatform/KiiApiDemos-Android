@@ -19,7 +19,7 @@ public class Constants {
     public static final String              ABTestingID = "2fecb240-e4bd-11e3-a798-22000ad90d5b";
     public static final String              ANALYTICS_AVG_SCORES_ID = "401";
     public static final String              ANALYTICS_EVENT_ID = "428";
-    
+
     public static final String  FILE_BUCKET = "files";
     public static final String  GEOLOCATION_BUCKET = "location";
     public static final String  GEOLOCATION_TITLE = "title";
@@ -28,4 +28,22 @@ public class Constants {
     public static final String  TWITTER_CONSUMER_KEY = "nxRS6qwgmkuty79umuBhug";
     public static final String  TWITTER_CONSUMER_SECRET = "YWWw1kBhf0hSPzbSs4uHKeMtE93PvaM7gXN6d33S2U";
     public static final String  GCM_SENDER_ID = "102928894173";
+
+    // For auto refresh token test
+//    public static final String              KII_APP_ID = "5b8d7fc2";
+//    public static final String              KII_APP_KEY = "c6a72bcd9836399f943d3798c7f3719f";
+//    public static final Site                KII_SITE = Site.US;
+//    public static final KiiAnalytics.Site   KII_ANALYTICS_SITE = KiiAnalytics.Site.US;
+//    public static final String              ABTestingID = null;
+//    public static final String              ANALYTICS_AVG_SCORES_ID = null;
+//    public static final String              ANALYTICS_EVENT_ID = null;
+//    public static final String  FILE_BUCKET = "files";
+//    public static final String  GEOLOCATION_BUCKET = "location";
+//    public static final String  GEOLOCATION_TITLE = "title";
+//    public static final String  GEOLOCATION_POI = "poi";
+//    public static final String  FB_APP_ID = null;
+//    public static final String  TWITTER_CONSUMER_KEY = null;
+//    public static final String  TWITTER_CONSUMER_SECRET = null;
+//    public static final String  GCM_SENDER_ID = null;
+
 }
