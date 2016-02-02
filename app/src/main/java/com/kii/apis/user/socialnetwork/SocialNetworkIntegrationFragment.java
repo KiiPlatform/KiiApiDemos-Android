@@ -20,6 +20,7 @@ import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiSocialCallBack;
 import com.kii.cloud.storage.social.KiiSocialConnect;
+import com.kii.cloud.storage.social.connector.KiiSocialNetworkConnector;
 import com.kii.cloud.storage.social.twitter.KiiTwitterConnect;
 
 /**
@@ -224,9 +225,10 @@ public class SocialNetworkIntegrationFragment extends Fragment {
         final Activity activity = getActivity();
         if (activity == null) { return; }
 
-        KiiSocialConnect conn = Kii.socialConnect(KiiSocialConnect.SocialNetwork.FACEBOOK);
-        conn.initialize(Constants.FB_APP_ID, null, null);
-        conn.logIn(activity, null, new KiiSocialCallBack(){
+        KiiSocialConnect connect = Kii.socialConnect(KiiSocialConnect.SocialNetwork.SOCIALNETWORK_CONNECTOR);
+        Bundle options = new Bundle();
+        options.putParcelable(KiiSocialNetworkConnector.PROVIDER, KiiSocialNetworkConnector.Provider.FACEBOOK);
+        connect.logIn(activity, options, new KiiSocialCallBack(){
             @Override
             public void onLoginCompleted(KiiSocialConnect.SocialNetwork network, KiiUser user, Exception exception) {
                 if (exception == null) {
