@@ -1,62 +1,27 @@
-/*
-apply plugin: 'java'
-task wrapper(type: Wrapper){
-    gradleVersion = '1.11'
-}
-*/
-
-defaultTasks 'clean', 'assembleRelease'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:1.5.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
 
-apply plugin: 'android'
-
-android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
-
-    defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 19
-        versionCode 1
-        versionName "1.0.0"
-    }
-    buildTypes {
-        release {
-            debuggable false
-            runProguard false
-            proguardFile getDefaultProguardFile('proguard-android.txt')
-        }
-    }
-    sourceSets {
-        main {
-           manifest {
-               srcFile 'AndroidManifest.xml'
-           }
-           java {
-               srcDir 'src'
-           }
-           res {
-               srcDir 'res'
-           }
-           aidl {
-               srcDir 'src'
-           }
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url  "http://dl.bintray.com/kii/KiiAndroidSDK"
         }
     }
 }
 
-dependencies {
-    compile 'com.google.android.gms:play-services:4.3.+'
-    compile 'com.android.support:support-v4:19.+'
-    compile files('libs/KiiAnalyticsSDK_2.1.5.jar',
-                  'libs/KiiSDK_2.1.21.jar')
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
