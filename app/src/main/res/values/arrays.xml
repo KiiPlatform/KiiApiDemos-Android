@@ -2,6 +2,7 @@
 <resources>
 
     <string-array name="kii_components">
+        <item>Preferences</item>
         <item>User management</item>
         <item>Group management</item>
         <item>Object storage (Notepad sample)</item>
@@ -14,6 +15,7 @@
     </string-array>
 
     <array name="kii_components_ids">
+        <item>@id/cate_preferences</item>
         <item>@id/cate_user_management</item>
         <item>@id/cate_group_management</item>
         <item>@id/cate_object_storage</item>

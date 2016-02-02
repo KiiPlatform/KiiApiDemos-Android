@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <item name="cate_preferences" type="id"/>
     <item name="cate_user_management" type="id"/>
     <item name="cate_group_management" type="id"/>
     <item name="cate_object_storage" type="id"/>
